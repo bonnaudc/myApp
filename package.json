@@ -1,0 +1,13 @@
+{
+  "name": "myApp",
+  "private": true,
+  "scripts": {
+    "start": "meteor run",
+    "test": "meteor test --driver-package practicalmeteor:mocha --port 5000"
+  },
+  "dependencies": {
+    "faker": "^3.1.0",
+    "meteor-node-stubs": "~0.2.0",
+    "react-tap-event-plugin": "^1.0.0"
+  }
+}

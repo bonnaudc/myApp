@@ -1,0 +1,29 @@
+import React from 'react';
+import { Link } from 'react-router';
+import {Card, CardActions, CardHeader, CardMedia, CardTitle, CardText} from 'material-ui/Card';
+import FlatButton from 'material-ui/FlatButton';
+
+class App extends React.Component {
+
+	render() {
+		return(
+	const App = () => (
+  <MuiThemeProvider>
+    <MyAwesomeReactComponent />
+  </MuiThemeProvider>
+);
+
+ReactDOM.render(
+  <App />,
+  document.getElementById('app')
+);
+
+		)
+	}
+}
+
+App.propTypes = {
+	children: React.PropTypes.element.isRequired,
+}
+
+export default App;
