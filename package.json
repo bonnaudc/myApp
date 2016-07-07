@@ -6,9 +6,11 @@
     "test": "meteor test --driver-package practicalmeteor:mocha --port 5000"
   },
   "dependencies": {
+    "chimp": "^0.35.0",
     "faker": "^3.1.0",
     "material-ui": "^0.15.1",
     "meteor-node-stubs": "~0.2.0",
+    "phantomjs": "^2.1.7",
     "react": "^15.2.0",
     "react-dom": "^15.2.0",
     "react-router": "^2.5.2",
