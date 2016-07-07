@@ -3,7 +3,8 @@
   "private": true,
   "scripts": {
     "start": "meteor run",
-    "test": "meteor test --driver-package practicalmeteor:mocha --port 5000"
+    "test": "meteor test --driver-package practicalmeteor:mocha --port 5000",
+    "features": "chimp --ddp=http://localhost:3000 --watch --cucumber --browser=phantomjs --path=features"
   },
   "dependencies": {
     "chimp": "^0.35.0",
