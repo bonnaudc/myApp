@@ -21,7 +21,6 @@ meteor:mocha
 mdg:validated-method
 dburles:factory
 aldeed:collection2
-mongo
 practicalmeteor:chai
 
 
