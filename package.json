@@ -6,7 +6,7 @@
     "test": "meteor test --driver-package practicalmeteor:mocha --port 5000",
     "features": "chimp --ddp=http://localhost:3000 --watch --cucumber --browser=phantomjs --path=features"
   },
-  "dev-dependencies": {
+  "devDependencies": {
     "chimp": "^0.35.0",
     "phantomjs-prebuilt": "^2.1.7",
     "faker": "^3.1.0"
