@@ -2,7 +2,7 @@
 
 ##Installation
 ```
-git clone https://github.com/bonnaudc/myApp.git myApp
+git clone https://github.com/cyrillebonnaud/myApp.git myApp
 cd myApp && npm install
 meteor update
 ```
