@@ -1,61 +1,41 @@
+//app.js
+
 import React from 'react';
-import mui from 'material-ui';
-import { RouteHandler } from 'react-router';
-import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
-import getMuiTheme from 'material-ui/styles/getMuiTheme';
-import Drawer from 'material-ui/Drawer';
-import MenuItem from 'material-ui/MenuItem';
-import Menu from 'material-ui/Menu';
-import AppBar from 'material-ui/AppBar';
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
+import getMuiTheme from 'material-ui/styles/getMuiTheme'
+import {teal500} from 'material-ui/styles/colors';
+import AuthenticatedNavigation from '../components/authenticated-navigation.js'
+
+import PublicNavigation from '../components/public-navigation.js'
 
 class App extends React.Component {
 
-    constructor(props) {
-        super(props);
-        this.state = {open:false};
-        this.handleToggle = this.handleToggle.bind(this);
-
-    }
-
-    handleToggle(){
-        this.setState({open: !this.state.open});
+    renderNavigation(hasUser) {
+        return hasUser ? <AuthenticatedNavigation />
+            : <PublicNavigation />
+        ;
     }
 
     render() {
 
         return (
-
-            <MuiThemeProvider muiTheme={getMuiTheme()}>
-                <div id="page_container">
-                    <AppBar
-                        title="Title"
-                        iconClassNameRight="muidocs-icon-navigation-expand-more"
-                        onTitleTouchTap={this.handleToggle}
-                    >
-                        <Menu>
-                            <MenuItem primaryText="Maps" />
-                            <MenuItem primaryText="Books" />
-                            <MenuItem primaryText="Flights" />
-                            <MenuItem primaryText="Apps" />
-                        </Menu>
-                    </AppBar>
-                    <Drawer open={this.state.open}>
-                        <AppBar title="My App" />
-                        <MenuItem>Menu Item</MenuItem>
-                        <MenuItem>Menu Item 2</MenuItem>
-                    </Drawer>
-                    {this.props.children}
-
+            <MuiThemeProvider>
+                <div>
+                    <div>
+                        { this.renderNavigation(this.props.hasUser) }                   
+                    </div>
+                    <div>
+                        {this.props.children}
+                    </div>
                 </div>
-
             </MuiThemeProvider>
         );
     }
 }
 
-
-App.contextTypes = {
-    history: React.PropTypes.object
+App.propTypes = {
+    hasUser: React.PropTypes.object,
+    children: React.PropTypes.element.isRequired,
 };
 
 export default App;

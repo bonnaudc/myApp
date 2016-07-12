@@ -25,3 +25,8 @@ aldeed:collection2
 xolvio:cleaner
 
 
+accounts-password
+react-meteor-data
+std:accounts-ui
+std:accounts-material
+materialize:materialize
