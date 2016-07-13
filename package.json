@@ -15,11 +15,7 @@
     "material-ui": "^0.15.1",
     "meteor-node-stubs": "~0.2.0",
     "react": "^15.2.0",
-<<<<<<< HEAD
     "react-addons-pure-render-mixin": "^15.2.0",
-=======
-    "react-addons-pure-render-mixin": "^15.0.2",
->>>>>>> 5e58abf28a1308498dd54e1f06684af0d14e0c58
     "react-dom": "^15.2.0",
     "react-router": "^2.5.2",
     "react-tap-event-plugin": "^1.0.0",
