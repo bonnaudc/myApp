@@ -36,7 +36,7 @@ Meteor.startup(() => {
                 <Route path="relatives-list" component={ RelativesListContainer }  onEnter={ requireAuth }  />
                 <Route path="pictures" component={ PicturesListContainer }  onEnter={ requireAuth }  />
                 <Route path="login" component={ Login } />
-                <Route path="signup" component={ Accounts.ui.LoginForm } state={STATES.SIGN_UP} />
+                <Route path="signup" component={ SignUp } />
             </Route>
 
         </Router>	
