@@ -25,5 +25,6 @@ dburles:factory
 aldeed:collection2
 xolvio:cleaner
 
-accounts-password
 std:accounts-material
+materialize:materialize
+accounts-password

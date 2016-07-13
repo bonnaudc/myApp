@@ -8,13 +8,15 @@ import AuthenticatedNavigation from '../components/authenticated-navigation.js'
 
 import PublicNavigation from '../components/public-navigation.js'
 
+const renderNavigation = () => {
+
+    return (Meteor.userId() != null) ? <AuthenticatedNavigation />
+        : <PublicNavigation />
+    ;
+}
+
 class App extends React.Component {
 
-    renderNavigation(hasUser) {
-        return hasUser ? <AuthenticatedNavigation />
-            : <PublicNavigation />
-        ;
-    }
 
     render() {
 
@@ -22,7 +24,7 @@ class App extends React.Component {
             <MuiThemeProvider>
                 <div>
                     <div>
-                        { this.renderNavigation(this.props.hasUser) }                   
+                        { renderNavigation() }                   
                     </div>
                     <div>
                         {this.props.children}
@@ -34,7 +36,6 @@ class App extends React.Component {
 }
 
 App.propTypes = {
-    hasUser: React.PropTypes.object,
     children: React.PropTypes.element.isRequired,
 };
 
