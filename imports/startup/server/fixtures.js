@@ -1,4 +1,5 @@
 import { Meteor } from 'meteor/meteor';
+import { Accounts } from 'meteor/accounts-base';
 import { Pictures } from '../../api/pictures/pictures.js';
 import { insertPicture} from '../../api/pictures/methods.js';
 import { Factory } from 'meteor/dburles:factory';
@@ -22,12 +23,27 @@ const pictures = [
   },
 ];
 
-const { _id } = Factory.create('picture');
+//const pic = Factory.create('pictures');
 
-pictures.forEach((picture) => {
+
+/*pictures.forEach((picture) => {
   const pictureExist = Pictures.findOne({ 'src': picture.src });
 
   if (!pictureExist) {
     insertPicture.call(picture);
   }
+  });*/
+
+const users = [{
+  email: 'test@test.com',
+  password: 'test',
+  username: 'test'
+}];
+
+users.forEach(({ email, password, username }) => {
+  const userExists = Meteor.users.findOne({ 'emails.address': email });
+
+  if (!userExists) {
+      const userId = Accounts.createUser({ email, password, username });
+    }
 });
