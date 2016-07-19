@@ -1,6 +1,7 @@
 //public-navigation.js
 
 import React from 'react';
+import { Link } from 'react-router';
 import mui from 'material-ui';
 import AppBar from 'material-ui/AppBar';
 import ActionAccountCircle from 'material-ui/svg-icons/action/account-circle';
@@ -17,7 +18,7 @@ const styles = {
 class PublicNavigation extends React.Component {
 
     handleTouchTap() {
-        alert('onTouchTap triggered on the title component');
+        console.log('onTouchTap triggered on the title component');
     }
 
     render() {
@@ -30,10 +31,12 @@ class PublicNavigation extends React.Component {
                     iconElementRight={
                                 <div>
                                     <FlatButton
-                                        label="Login" 
-                                    />
+                                        label="Login"
+                                        containerElement={<Link to="/login" />} 
+                                   />
                                     <FlatButton
                                         label="Sign up" 
+                                         containerElement={<Link to="/signup" />}
                                     />
                                 </div>
                             

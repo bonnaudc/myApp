@@ -1,6 +1,7 @@
 //authenticated-navigation.js
 
 import React from 'react';
+import { browserHistory, Link } from 'react-router';
 import mui from 'material-ui';
 import AppBar from 'material-ui/AppBar';
 import IconButton from 'material-ui/IconButton';
@@ -12,6 +13,7 @@ import NavigationClose from 'material-ui/svg-icons/navigation/close';
 import FlatButton from 'material-ui/FlatButton';
 import injectTapEventPlugin from 'react-tap-event-plugin';
 
+const handleLogout = () => Meteor.logout(() => browserHistory.push('/login'));
 
 class AuthenticatedNavigation extends React.Component {
 
@@ -29,7 +31,7 @@ class AuthenticatedNavigation extends React.Component {
                         <IconMenu
                             iconButtonElement={
                                 <FlatButton
-                                    label="User Name" 
+                                    label={Meteor.user().username}
                                     icon={<ActionAccountCircle/>} 
                                 />
                                 }
@@ -37,7 +39,10 @@ class AuthenticatedNavigation extends React.Component {
                                 anchorOrigin={{horizontal: 'left', vertical: 'top'}}
                             >
                                 <MenuItem primaryText="My profile" />
-                                <MenuItem primaryText="Sign out" />
+                                <MenuItem
+                                    primaryText="Sign out"
+                                    onTouchTap={handleLogout}
+                                />
                             </IconMenu>
                             }
                         />

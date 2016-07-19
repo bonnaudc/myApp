@@ -144,12 +144,12 @@ export default class Login extends React.Component {
                         <RaisedButton
                             style={submitStyle}
                             type="submit"
-                            label="Submit"
+                            label="log in"
                             disabled={!this.state.canSubmit}
                         />
                         <FlatButton
                             style={submitStyle}
-                            label="register"
+                            label="sign up"
                             disabled={false}
                             secondary={true} 
                             onTouchTap={this.handleSignUpButton}
